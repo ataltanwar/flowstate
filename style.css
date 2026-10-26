@@ -1128,3 +1128,7 @@ main {
 
   .toast { bottom: 40px; }
 }
+
+
+/* Keep the progressive install action hidden until the browser supports it. */
+.pwa-install-btn[hidden] { display: none !important; }

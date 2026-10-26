@@ -29,3 +29,29 @@ Double-click `index.html`, or open it in any modern browser. No install, build s
 - Dates are handled in local time (`YYYY-MM-DD`) to avoid timezone shifts.
 - Data is stored only in this browser. Clearing site data removes it.
 - Tested at desktop and mobile breakpoints, including month boundaries and leap years.
+
+
+## Install as a PWA
+
+Flowstate can be installed on supported browsers and keeps its app shell available offline.
+
+1. Deploy the repository using HTTPS (GitHub Pages, Vercel, or another static host).
+2. Open the deployed URL in Chrome or Edge and choose **Install flowstate** (or use the browser's install option).
+3. On iPhone/iPad, open the website in Safari, use **Share**, and choose **Add to Home Screen**.
+
+### Local testing
+
+Run the directory through a local web server; service workers do not work when opening `index.html` directly from `file://`.
+
+```bash
+python -m http.server 8080
+```
+
+Then open http://localhost:8080.
+
+### Offline behavior and data
+
+- The service worker caches the HTML, CSS, JavaScript, manifest, logo, and app icons.
+- Tasks continue to be saved in the browser's existing `localStorage`; this PWA change does not move or sync your data to a server.
+- On a first visit, load the app once while online so its app shell can be cached.
+- The cache is versioned in `service-worker.js`; increment the version when changing offline-cached files.
