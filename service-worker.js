@@ -2,7 +2,7 @@
 'use strict';
 
 const CACHE_PREFIX = 'flowstate-pwa';
-const CACHE_NAME = CACHE_PREFIX + '-v1';
+const CACHE_NAME = CACHE_PREFIX + '-v2';
 const APP_SHELL = [
   './',
   './index.html',
