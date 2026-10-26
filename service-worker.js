@@ -12,7 +12,11 @@ const APP_SHELL = [
   './manifest.json',
   './logo.png',
   './icons/icon.svg',
-  './icons/icon-maskable.svg'
+  './icons/icon-maskable.svg',
+  './icons/icon-192.png',
+  './icons/icon-512.png',
+  './icons/icon-192-maskable.png',
+  './icons/icon-512-maskable.png'
 ];
 
 self.addEventListener('install', (event) => {
