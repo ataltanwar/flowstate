@@ -3,12 +3,18 @@
 
 (function () {
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
-    window.addEventListener('load', function () {
-      navigator.serviceWorker.register('./service-worker.js').catch(function (error) {
-        console.error('flowstate service worker registration failed:', error);
-      });
+    window.addEventListener('load', function () navigator.serviceWorker.register('./service-worker.js', {
+      updateViaCache: 'none'
+    })
+    .then(function (registration) {
+      registration.update();
+      console.log('FlowState service worker registered:', registration.scope);
+    })
+    .catch(function (error) {
+      console.error('FlowState service worker registration failed:', error);
     });
-  }
+  });
+}
 
   var deferredInstallPrompt = null;
   var installButton = null;
