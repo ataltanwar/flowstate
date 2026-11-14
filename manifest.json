@@ -1,7 +1,7 @@
 {
   "id": "./",
-  "name": "flowstate — Your daily tracker",
-  "short_name": "flowstate",
+  "name": "Flowstate",
+  "short_name": "Flowstate",
   "description": "A simple, local-first task manager: see today, plan the next few days, and write things down.",
   "lang": "en",
   "start_url": "./",
